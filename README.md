@@ -28,15 +28,15 @@ Generate a new application key
 	
 ** Note: Following needs to be updated in .env file for sqlite db connection: **
 
-DB_CONNECTION=sqlite  // we need to replace mysql with sqlite
+DB_CONNECTION=sqlite       // we need to replace mysql with sqlite
 
 We need to comment following db variables:
 
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
+DB_HOST=127.0.0.1  
+DB_PORT=3306  
+DB_DATABASE=laravel  
+DB_USERNAME=root  
+DB_PASSWORD= 
 
 
 Run the database migration command
