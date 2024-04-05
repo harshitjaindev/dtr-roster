@@ -16,19 +16,25 @@ Install all the dependencies using composer
 
     composer install
     
-Generate a new application key
-
-    php artisan key:generate
 
 Copy the example env file and make the required configuration changes in the .env file
 
     cp .env.example .env
 	
-** Note: Following needs to be updated in .env file: **
+Generate a new application key
+
+    php artisan key:generate
+	
+	
+** Note: Following needs to be added in .env file for sqlite db connection: **
 
 DB_CONNECTION=sqlite  // it should be sqlite
 
-DB_DATABASE={{DATABASE PATH}} // it should be absolute path of sqlite database
+DB_DATABASE={{DATABASE PATH}} // it should be absolute path of sqlite database 
+
+(Example:  DB_DATABASE= D:\dtr-roster\storage\app\sqlite\roster_manager.sqlite)
+
+(Also we need to comment other DB_CONNECTION in .env file.)
 
 
 (**Provide the correct database connection in .env before migrating**)
@@ -71,7 +77,10 @@ For testing the APIs, we have shared the API collections here:
 
 https://github.com/harshitjaindev/dtr-roster/tree/main/Postman-Collections
 
-We need to import the collection and environment variable accordingly.
+We need to import the collections and environment variables accordingly. Kindly refer the below document for more information on how to import the collections and what APIs we are using.
+
+https://github.com/harshitjaindev/dtr-roster/tree/main/Roster-API-document.docx
+
 
 ## Import File Structure (html) provide by DTR Airline:
 
