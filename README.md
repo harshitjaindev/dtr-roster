@@ -30,13 +30,13 @@ Generate a new application key
 
 DB_CONNECTION=sqlite  // we need to replace mysql with sqlite
 
-We need to comment other db variables:
+We need to comment following db variables:
 
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=roster_manager
-# DB_USERNAME=root
-# DB_PASSWORD=
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
 
 
 Run the database migration command
@@ -47,6 +47,7 @@ Run the database migration command
 It will say : 
 
 The SQLite database does not exist: [[absolute_path_of_sqlite_db]]
+
 Would you like to create it? (yes/no)
 
 We need to enter: yes. It will create sqlite database on the given path for us.
