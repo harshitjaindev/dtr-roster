@@ -24,8 +24,10 @@ Copy the example env file and make the required configuration changes in the .en
 
     cp .env.example .env
 	
-Note: Following needs to be updated in .env file:
+** Note: Following needs to be updated in .env file: **
+
 DB_CONNECTION=sqlite  // it should be sqlite
+
 DB_DATABASE={{DATABASE PATH}} // it should be absolute path of sqlite database
 
 
@@ -52,7 +54,8 @@ APIs can now be accessed at
 # Testing API
 
  
-Request headers (except login, register route): 
+** Request headers 
+(We need to add first two parameters in all APIs request header. Authorization header is needed for accessing the APIs except the login and register APIs): 
 
 | **Key**           | **Value**          
 |----------------	|------------------	        |
@@ -60,21 +63,24 @@ Request headers (except login, register route):
 |----------------	|------------------	        |
 |Accept     	    | application/vnd.api+json 	|
 |----------------	|-----------------------	|
-|Authorization     	| Bearer 1|OrBUk2zM9BdlVWWDs7T75vvlBzlvjXo1LDT3RbBj44132cc9
+|Authorization     	| Bearer {{access-token}}
 
-### Tesing APIS in Postman ###
+### Tesing APIs in Postman ###
+
 For testing the APIs, we have shared the API collections here:
-https://github.com/harshitjaindev/dtr-roster.git/Postman- Collections
+
+https://github.com/harshitjaindev/dtr-roster/tree/main/Postman-Collections
 
 We need to import the collection and environment variable accordingly.
 
-## Import File Structure (html) by DTR:
+## Import File Structure (html) provide by DTR Airline:
 
-https://github.com/harshitjaindev/dtr-roster.git/tests/RosterData/Roster-CrewConnex
+https://github.com/harshitjaindev/dtr-roster/blob/main/tests/RosterData/Roster-CrewConnex-Main.html
 
 
-### To run unit tests for the import functionality, execute the following commands:
+### To run the unit tests for the APIs, kindly execute the following commands:
 
     php artisan test
+	
 
-    We need to update phpunit.xml file for test cases accordingly.
+** Note : We need to update phpunit.xml file accordingly for running the test cases. **

@@ -19,14 +19,4 @@ class GetFlightsByStartLocationTest extends TestCase
         ]));
         $response->assertSuccessful();
     }
-
-    /*
-	public function testGetFlightsFromLocationWithInvalidLocation()
-    {
-        $response = $this->postJson(route('api.flights-by-start-location'), [
-            'location' => 'LAXX',
-        ]);
-        $response->assertJsonValidationErrors(['location']);
-    }
-	*/
 }
