@@ -26,22 +26,31 @@ Generate a new application key
     php artisan key:generate
 	
 	
-** Note: Following needs to be added in .env file for sqlite db connection: **
+** Note: Following needs to be updated in .env file for sqlite db connection: **
 
-DB_CONNECTION=sqlite  // it should be sqlite
+DB_CONNECTION=sqlite  // we need to replace mysql with sqlite
 
-DB_DATABASE={{DATABASE PATH}} // it should be absolute path of sqlite database 
+We need to comment other db variables:
 
-(Example:  DB_DATABASE= D:\dtr-roster\storage\app\sqlite\roster_manager.sqlite)
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=roster_manager
+# DB_USERNAME=root
+# DB_PASSWORD=
 
-(Also we need to comment other DB_CONNECTION in .env file.)
 
-
-(**Provide the correct database connection in .env before migrating**)
-
-Run the database migrations 
+Run the database migration command
 
     php artisan migrate
+
+	
+It will say : 
+
+The SQLite database does not exist: [[absolute_path_of_sqlite_db]]
+Would you like to create it? (yes/no)
+
+We need to enter: yes. It will create sqlite database on the given path for us.
+
 
 Start the local development server
 
@@ -61,7 +70,7 @@ APIs can now be accessed at
 
  
 ** Request headers 
-(We need to add first two parameters in all APIs request header. Authorization header is needed for accessing the APIs except the login and register APIs): 
+(We need to add first two parameters in all API's request header. Authorization header is needed for accessing the APIs except the login and register APIs): 
 
 | **Key**           | **Value**          
 |----------------	|------------------	        |
@@ -70,6 +79,7 @@ APIs can now be accessed at
 |Accept     	    | application/vnd.api+json 	|
 |----------------	|-----------------------	|
 |Authorization     	| Bearer {{access-token}}
+
 
 ### Tesing APIs in Postman ###
 
@@ -90,6 +100,3 @@ https://github.com/harshitjaindev/dtr-roster/blob/main/tests/RosterData/Roster-C
 ### To run the unit tests for the APIs, kindly execute the following commands:
 
     php artisan test
-	
-
-** Note : We need to update phpunit.xml file accordingly for running the test cases. **
